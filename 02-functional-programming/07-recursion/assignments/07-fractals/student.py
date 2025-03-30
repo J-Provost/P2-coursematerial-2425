@@ -34,8 +34,28 @@ def draw_line_in_angle(tur, length, angle):
 # angle = The angle between branches.
 # count = the depth of the recursive element at this point.
 def recursive_draw(tur, x, y, length, angle, count):
-    # TODO: implement so a Y-tree is drawn
-    pass
+    if count == 0:
+        return
+
+    # Move to the starting position
+    tur.penup()
+    tur.goto(x, y)
+    tur.pendown()
+
+    # Draw the main branch
+    tur.setheading(angle)
+    tur.forward(length)
+
+    # Get the end position of the branch
+    end_x, end_y = tur.position()
+
+    # Calculate the angles for the left and right branches
+    left_angle = angle + 45
+    right_angle = angle - 45
+
+    # Recursively draw the left and right branches
+    recursive_draw(tur, end_x, end_y, length * 0.7, left_angle, count - 1)
+    recursive_draw(tur, end_x, end_y, length * 0.7, right_angle, count - 1)
 
 
 if __name__ == "__main__":
