@@ -3,4 +3,6 @@
 import re
 
 def one_or_more_a(string):
-    return all( char == 'a' for char in string )
+    pattern = r'^a+$'
+    match = re.search(pattern, string)
+    return bool(match)
