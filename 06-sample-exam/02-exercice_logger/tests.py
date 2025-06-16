@@ -1,5 +1,5 @@
 import pytest
-from starter_code import Swim
+from student import Swim
 
 def test_constructor_success():
     swim = Swim(date="2025-05-20", distance=2.0, duration=30.0)

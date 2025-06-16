@@ -1,4 +1,4 @@
-from starter_code import *
+from student import *
 
 # Some methods to easily showcase activities
 def print_run(r):

@@ -17,13 +17,13 @@ class Queue:
         if len(self.__queue) == 0:
             return True
         return False
-    
-# queue = Queue()
 
-# queue.add('Alice')   # Alice arrives first
-# queue.add('Bob')     # Then Bob
-# queue.add('Charlie') # And Charlie as third
+queue = Queue()
 
-# queue.next()   # Alice arrived first, so she's the first to be served next
-# queue.next()   # This must return Bob
-# queue.next()
+queue.add('Alice')   # Alice arrives first
+queue.add('Bob')     # Then Bob
+queue.add('Charlie') # And Charlie as third
+
+print(queue.next())   # Alice arrived first, so she's the first to be served next
+print(queue.next())   # This must return Bob
+print(queue.next())
